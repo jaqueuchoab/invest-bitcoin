@@ -117,9 +117,9 @@ print(f"Desvio padrão da variação diária: {desvio_padrao:.2f}%")
 # Passo 3: Simulação de Monte Carlo para 3 dias
 np.random.seed(42)  # Define uma semente para garantir que os resultados sejam reproduzíveis
 num_simulacoes = 10000  # Número de simulações a serem realizadas
-preco_atual = obter_preco_bitcoin(data_str)  # Preço atual do Bitcoin (último preço no DataFrame)
+preco_atual = obter_preco_bitcoin(data_str)  # Preço atual do Bitcoin
 
-# Verificar se o preço atual foi obtido com sucesso
+# Verificar se o preço atual foi obtido com sucesso pela data, se não pega o último no dataFrame
 if preco_atual is None:
     print("Não foi possível obter o preço atual. Usando o último preço do DataFrame.")
     preco_atual = df['preco_fechamento'].iloc[-1]
